@@ -20,15 +20,14 @@ class Instructor extends Person {
         this.specialty = props.specialty;
         this.favLanguage = props.favLanguage;
         this.catchPhrase = props.catchPhrase;
-        this.student = props.student;
     }
 
     demo(subject) {
         return `Today we are learning about ${subject}`;
     }
 
-    grade(Student, subject) {
-        return `${Student.name} receives a perfect score on ${subject}`;
+    grade(student, subject) {
+        return `${student.name} receives a perfect score on ${subject}`;
     }
 }
 
@@ -66,8 +65,8 @@ class ProjectManager extends Instructor {
         return `${this.name} announces to ${slackChannel}, @channel standy times!`;
     }
 
-    debugsCode(Student, subject) {
-        return `${this.name} debugs ${Student.name}'s code on ${subject}`;
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}`;
     }
 }
 
@@ -99,10 +98,3 @@ const darren = new ProjectManager({
     gradClassName: 'WEB18',
     favInstructor: 'Josh'
 });
-
-// console.log(darren.speak());
-// console.log(darren.standUp("main"));
-// console.log(dan.demo("JavaScript"));
-// console.log(isaiah.listsSubjects());
-// console.log(isaiah.PRAssignment("CS"));
-// console.log(isaiah.sprintChallenge("CS"));
